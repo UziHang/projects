@@ -32,15 +32,16 @@ export default function Home() {
             <h2>Learn &rarr;</h2>
             <p>Learn about Next.js in an interactive course with quizzes!</p>
           </a>
-<Link href={'/levels'}>
-          <a
-            href="noreferrer"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+          <Link href={'/levels'}>
+            <a
+              href="noreferrer"
+              className={styles.card}
+            >
+              <h2>Examples &rarr;</h2>
+              <p>react three demo</p>
+            </a>
           </Link>
+
           <a
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
