@@ -17,11 +17,12 @@ export  default function Level() {
 
     // R3F hooks只能在 Canvas component中使用
     const {camera} =useThree()
+    console.log('useThree数据:');
     console.log(useThree());
 
     useSpring( // 弹簧动画hook
         ()=>({
-            from:{y:camera.position.y+5},
+            from:{y:camera.position.y},
             to:{y:camera.position.y},
             config:{friction:100},//   friction:摩擦力
             onChange:({value})=>{(camera.position.y=value.y)}  //动画事件触发function
