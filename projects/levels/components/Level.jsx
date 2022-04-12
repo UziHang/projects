@@ -9,14 +9,13 @@ import { useThree} from '@react-three/fiber';
 import { useSpring } from '@react-spring/three'
 
 export  default function Level() {
-
-    const {nodes,materials}=useGLTF('/models/level-react-draco.glb')
+    const {nodes,materials}=useGLTF('/projectsAssets/levels/models/level-react-draco.glb')
     console.log(`useGLTF获取nodes:`)
     console.log(nodes);
     console.log(`useGLTF获取materials:`);
     console.log(materials);
 
-    // R3F hooks can only be used within the Canvas component!
+    // R3F hooks只能在 Canvas component中使用
     const {camera} =useThree()
     console.log(useThree());
 

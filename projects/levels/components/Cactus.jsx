@@ -3,7 +3,7 @@ import { Mesh } from 'three'
 
 //  仙人掌
 export default function Cactus() {
-    const {nodes,materials}=useGLTF('/models/level-react-draco.glb')
+    const {nodes,materials}=useGLTF('/projectsAssets/levels/models/level-react-draco.glb')
     console.log(nodes)
     console.log(materials);
     return (

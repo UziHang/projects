@@ -5,7 +5,7 @@ import { useSpring, a } from '@react-spring/three'
 
 // 摄像机模型
 export default function Camera() {
-  const { nodes, materials } = useGLTF('/models/level-react-draco.glb')
+  const { nodes, materials } = useGLTF('/projectsAssets/levels/models/level-react-draco.glb')
   const [spring, api] = useSpring(() => ({ 'rotation-z': 0, config: { friction: 40 } }), [])
   
   useEffect(() => {

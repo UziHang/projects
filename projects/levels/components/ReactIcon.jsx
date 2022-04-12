@@ -2,7 +2,7 @@ import { useEffect,useRef} from "react";
 import { useGLTF, useMatcapTexture } from "@react-three/drei";
 import { useSpring, a } from "@react-spring/three";
 export default function ReactIcon() {
-  const { nodes } = useGLTF("/models/level-react-draco.glb");
+  const { nodes } = useGLTF("/projectsAssets/levels/models/level-react-draco.glb");
   //  材质捕捉渲染 纹理hook    65A0C7_C3E4F8_A7D5EF_97CAE9为确切的材质
   const [matcap] = useMatcapTexture("65A0C7_C3E4F8_A7D5EF_97CAE9", 1024);
 
