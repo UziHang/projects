@@ -10,6 +10,7 @@ import Level from './components/Level'
 import Cactus from './components/Cactus'
 import Camera from './components/Camera';
 import ReactIcon from './components/ReactIcon'
+import Pyramid from './components/Pyramid';
 
 
 const Levels = () => {
@@ -23,6 +24,7 @@ const Levels = () => {
     {/* 定义React three Fiber Scene */}
     <Canvas
       flat 
+      shadows
       dpr={[1, 2]} //像素比m in,max
       camera={{  // 配置摄像头
         fov: 25,  //视角
@@ -60,6 +62,7 @@ const Levels = () => {
           <Cactus />
           <Camera />
           <ReactIcon />
+          <Pyramid />
           </group>
         </PresentationControls>
     </Canvas>

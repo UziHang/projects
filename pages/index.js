@@ -16,7 +16,7 @@ const Home = () => {
       <main>
         <ExamplesList />
       </main>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   )
 }
