@@ -1,297 +1,96 @@
 
-import React ,{useRef}from 'react'
+import React ,{useRef,useEffect}from 'react'
 
-import { useGLTF } from "@react-three/drei";
+import { useGLTF,useAnimations} from "@react-three/drei";
 
 
-export default  function Model()  {
+export default  function Model(props)  {
     const group = useRef();
-    const {nodes,materials}=useGLTF('/projectsAssets/brid/models/brid-in-snow.glb')
+    const {nodes,materials,animations}=useGLTF('/projectsAssets/myAvatar/models/dancing.glb')
+    // const {nodes,materials,animations}=useGLTF('/projectsAssets/myAvatar/models/mybody.glb')
     console.log(nodes)
-    return (
-        
-        <group ref={group}  dispose={null}>
-        <group rotation={[-Math.PI / 2, 0, 0]}>
-          <group rotation={[Math.PI / 2, 0, 0]} scale={0.001}>
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.carrion_carrion_mat_0.geometry}
-              material={materials["carrion_mat.002"]}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.carrion001_carrion_hull_mat_0.geometry}
-              material={materials["carrion_hull_mat.002"]}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.grass_grass_2_mat_0.geometry}
-              material={materials["grass_2_mat.002"]}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.grass001_grass_1_mat_0.geometry}
-              material={materials["grass_1_mat.002"]}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.grass002_grass_mat_0.geometry}
-              material={materials["grass_mat.002"]}
-            />
-            <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-              <group position={[0, 2.66, 0]}>
-                <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
-                  <mesh
-                    castShadow
-                    receiveShadow
-                    geometry={nodes.raven001_raven_mat_0.geometry}
-                    material={nodes.raven001_raven_mat_0.material}
-                  />
-                </group>
-                <primitive object={nodes._rootJoint} />
-                <skinnedMesh
-                  geometry={nodes.Object_21002.geometry}
-                  material={nodes.Object_21002.material}
-                  skeleton={nodes.Object_21002.skeleton}
-                />
-              </group>
-            </group>
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop_hull001_snow_drop_hull_mat_0.geometry}
-              material={nodes.snow_drop_hull001_snow_drop_hull_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop_hull002_snow_drop_hull_mat_0.geometry}
-              material={nodes.snow_drop_hull002_snow_drop_hull_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop_hull003_snow_drop_hull_mat_0.geometry}
-              material={nodes.snow_drop_hull003_snow_drop_hull_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop_hull004_snow_drop_hull_mat_0.geometry}
-              material={nodes.snow_drop_hull004_snow_drop_hull_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop_hull005_snow_drop_hull_mat_0.geometry}
-              material={nodes.snow_drop_hull005_snow_drop_hull_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop_hull006_snow_drop_hull_mat_0.geometry}
-              material={nodes.snow_drop_hull006_snow_drop_hull_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop_hull008_snow_drop_hull_mat_0.geometry}
-              material={nodes.snow_drop_hull008_snow_drop_hull_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop_hull009_snow_drop_hull_mat_0.geometry}
-              material={nodes.snow_drop_hull009_snow_drop_hull_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop_hull010_snow_drop_hull_mat_0.geometry}
-              material={nodes.snow_drop_hull010_snow_drop_hull_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop_hull011_snow_drop_hull_mat_0.geometry}
-              material={nodes.snow_drop_hull011_snow_drop_hull_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop_hull012_snow_drop_hull_mat_0.geometry}
-              material={nodes.snow_drop_hull012_snow_drop_hull_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop_hull013_snow_drop_hull_mat_0.geometry}
-              material={nodes.snow_drop_hull013_snow_drop_hull_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop_hull014_snow_drop_hull_mat_0.geometry}
-              material={nodes.snow_drop_hull014_snow_drop_hull_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop_hull015_snow_drop_hull_mat_0.geometry}
-              material={nodes.snow_drop_hull015_snow_drop_hull_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop_hull016_snow_drop_hull_mat_0.geometry}
-              material={nodes.snow_drop_hull016_snow_drop_hull_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop001_snowdrop_mat_0.geometry}
-              material={nodes.snow_drop001_snowdrop_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop002_snowdrop_mat_0.geometry}
-              material={nodes.snow_drop002_snowdrop_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop003_snowdrop_mat_0.geometry}
-              material={nodes.snow_drop003_snowdrop_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop004_snowdrop_mat_0.geometry}
-              material={nodes.snow_drop004_snowdrop_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop005_snowdrop_mat_0.geometry}
-              material={nodes.snow_drop005_snowdrop_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop006_snowdrop_mat_0.geometry}
-              material={nodes.snow_drop006_snowdrop_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop007_snowdrop_mat_0.geometry}
-              material={nodes.snow_drop007_snowdrop_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop008_snowdrop_mat_0.geometry}
-              material={nodes.snow_drop008_snowdrop_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop009_snowdrop_mat_0.geometry}
-              material={nodes.snow_drop009_snowdrop_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop011_snowdrop_mat_0.geometry}
-              material={nodes.snow_drop011_snowdrop_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop012_snowdrop_mat_0.geometry}
-              material={nodes.snow_drop012_snowdrop_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop013_snowdrop_mat_0.geometry}
-              material={nodes.snow_drop013_snowdrop_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop014_snowdrop_mat_0.geometry}
-              material={nodes.snow_drop014_snowdrop_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop015_snowdrop_mat_0.geometry}
-              material={nodes.snow_drop015_snowdrop_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop016_snowdrop_mat_0.geometry}
-              material={nodes.snow_drop016_snowdrop_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop017_snowdrop_mat_0.geometry}
-              material={nodes.snow_drop017_snowdrop_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_drop_hull007_snow_drop_hull_mat_0.geometry}
-              material={nodes.snow_drop_hull007_snow_drop_hull_mat_0.material}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_floor_snow_floor_mat_0.geometry}
-              material={materials["snow_floor_mat.002"]}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_floor001_snow_floor_hull_mat_0.geometry}
-              material={materials["snow_floor_hull_mat.002"]}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_pile_snow_pile_mat_0.geometry}
-              material={materials["snow_pile_mat.002"]}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.snow_pile001_snow_pile_hull_mat_0.geometry}
-              material={materials["snow_pile_hull_mat.002"]}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.twig_Material003_0.geometry}
-              material={materials["Material.002"]}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.twig001_twig_hull_mat_0.geometry}
-              material={materials["twig_hull_mat.002"]}
-            />
-          </group>
+    console.log(animations);
+    const { actions } = useAnimations(animations, group); 
+    useEffect(() => {/* highlight-line */
+    actions['Armature|mixamo.com|Layer0'].play(); /* highlight-line */
+ }); /* highlight-line */
+     
+      return (
+        <group ref={group} {...props} dispose={null}>
+      <group name="Scene">
+        <group name="Armature">
+          <primitive object={nodes.Hips} />
+          <skinnedMesh
+            name="EyeLeft"
+            geometry={nodes.EyeLeft.geometry}
+            material={nodes.EyeLeft.material}
+            skeleton={nodes.EyeLeft.skeleton}
+            morphTargetDictionary={nodes.EyeLeft.morphTargetDictionary}
+            morphTargetInfluences={nodes.EyeLeft.morphTargetInfluences}
+          />
+          <skinnedMesh
+            name="EyeRight"
+            geometry={nodes.EyeRight.geometry}
+            material={nodes.EyeRight.material}
+            skeleton={nodes.EyeRight.skeleton}
+            morphTargetDictionary={nodes.EyeRight.morphTargetDictionary}
+            morphTargetInfluences={nodes.EyeRight.morphTargetInfluences}
+          />
+          <skinnedMesh
+            name="Wolf3D_Glasses"
+            geometry={nodes.Wolf3D_Glasses.geometry}
+            material={materials["Wolf3D_Glasses.001"]}
+            skeleton={nodes.Wolf3D_Glasses.skeleton}
+          />
+          <skinnedMesh
+            name="Wolf3D_Hair"
+            geometry={nodes.Wolf3D_Hair.geometry}
+            material={materials["Wolf3D_Hair.001"]}
+            skeleton={nodes.Wolf3D_Hair.skeleton}
+          />
+          <skinnedMesh
+            name="Wolf3D_Head"
+            geometry={nodes.Wolf3D_Head.geometry}
+            material={materials["Wolf3D_Skin.001"]}
+            skeleton={nodes.Wolf3D_Head.skeleton}
+            morphTargetDictionary={nodes.Wolf3D_Head.morphTargetDictionary}
+            morphTargetInfluences={nodes.Wolf3D_Head.morphTargetInfluences}
+          />
+          <skinnedMesh
+            name="Wolf3D_Body"
+            geometry={nodes.Wolf3D_Body.geometry}
+            material={materials["Wolf3D_Body.001"]}
+            skeleton={nodes.Wolf3D_Body.skeleton}
+          />
+          <skinnedMesh
+            name="Wolf3D_Outfit_Footwear"
+            geometry={nodes.Wolf3D_Outfit_Footwear.geometry}
+            material={materials["Wolf3D_Outfit_Footwear.001"]}
+            skeleton={nodes.Wolf3D_Outfit_Footwear.skeleton}
+          />
+          <skinnedMesh
+            name="Wolf3D_Teeth"
+            geometry={nodes.Wolf3D_Teeth.geometry}
+            material={materials["Wolf3D_Teeth.001"]}
+            skeleton={nodes.Wolf3D_Teeth.skeleton}
+            morphTargetDictionary={nodes.Wolf3D_Teeth.morphTargetDictionary}
+            morphTargetInfluences={nodes.Wolf3D_Teeth.morphTargetInfluences}
+          />
+          <skinnedMesh
+            name="Wolf3D_Outfit_Bottom"
+            geometry={nodes.Wolf3D_Outfit_Bottom.geometry}
+            material={materials["Wolf3D_Outfit_Bottom.001"]}
+            skeleton={nodes.Wolf3D_Outfit_Bottom.skeleton}
+          />
+          <skinnedMesh
+            name="Wolf3D_Outfit_Top"
+            geometry={nodes.Wolf3D_Outfit_Top.geometry}
+            material={materials["Wolf3D_Outfit_Top.001"]}
+            skeleton={nodes.Wolf3D_Outfit_Top.skeleton}
+          />
         </group>
       </group>
+    </group>
     
     )
 }

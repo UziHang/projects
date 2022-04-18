@@ -3,7 +3,7 @@ import React from 'react'
 import { StrictMode, Suspense } from 'react'
 import { Loader } from '@react-three/drei'
 import App from './App'
-const Brid = () => {
+const Avatar = () => {
   //ref绑定空间网络
   return (
     <StrictMode>
@@ -15,4 +15,4 @@ const Brid = () => {
     </StrictMode>
   )
 }
-export default Brid
+export default Avatar
