@@ -18,6 +18,7 @@ export function ExamplesList() {
     <div className={styles.container}>
       <ExamplesRow title={"study demo"}>
         <ExampleCard link="/levels" thumbnail="/thumbnails/level1.png" title="Levels demo" introduction="react  react-three-fiber  学习demo, 仿官方教程" />
+        <ExampleCard link="/bird" thumbnail="/thumbnails/bird.jpg" title="雪中鸟" introduction="react-three-dri 镜头练习" />
       </ExamplesRow>
     </div>
   )
