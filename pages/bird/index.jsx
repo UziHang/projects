@@ -6,7 +6,7 @@ export default function Index() {
      <div>
      <SEO
         title="Projects/brid - UziHang"
-        description="react react-three-fiber 学习demo"
+        description="react react-three-fiber 镜头操控"
         image="/logo.png"
       />
      <Bird />

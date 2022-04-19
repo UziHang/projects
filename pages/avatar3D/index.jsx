@@ -6,7 +6,7 @@ export default function Index() {
      <div>
      <SEO
         title="Projects/avatar3D - UziHang"
-        description="react react-three-fiber react-three-drei"
+        description="react react-three-fiber react-three-drei构建自己的3D形象"
         image="/logo.png"
       />
       <Avatar />
