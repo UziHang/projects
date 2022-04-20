@@ -17,9 +17,10 @@ export function ExamplesList() {
   return (
     <div className={styles.container}>
       <ExamplesRow title={"create"}>
+        <ExampleCard link="https://github.com/UziHang/wedding-invitation-h5" thumbnail="/thumbnails/wxQR.jpg" title="婚礼邀请函(微信扫码浏览)" introduction="个人设计，开发的婚礼邀请函小程序。故事模块方便你更多了解我~" />
+        <ExampleCard link="/avatar3D" thumbnail="/thumbnails/avatar3D.jpg" title="我的虚拟3D形象" introduction=" 你你你要跳舞嘛~~  useAnimations练习" />
         <ExampleCard link="/levels" thumbnail="/thumbnails/level1.png" title="Levels demo" introduction="react  react-three-fiber  学习demo, 仿官方教程" />
         <ExampleCard link="/bird" thumbnail="/thumbnails/bird.jpg" title="雪中鸟3D" introduction="react-three-drei 镜头练习(开发中)" />
-        <ExampleCard link="/avatar3D" thumbnail="/thumbnails/avatar3D.jpg" title="我的虚拟3D形象" introduction=" 你你你要跳舞嘛~~  useAnimations练习" />
         </ExamplesRow>
 
       <ExamplesRow title={"study demo"}>
