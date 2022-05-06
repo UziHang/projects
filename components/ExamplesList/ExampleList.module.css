@@ -23,6 +23,12 @@
   padding: 0;
   justify-content: center;
 }
+.example-row__list::after {
+    content: '';
+    width: 332px;
+    margin-right: auto;
+    visibility: hidden;
+}
 
 @media (min-width: 1240px) {
   .example-row__list {

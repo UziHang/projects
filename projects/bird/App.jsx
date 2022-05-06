@@ -1,5 +1,5 @@
 import React, { useEffect, useRef,useState } from "react";
-import { PresentationControls,OrbitControls,ContactShadows,GizmoHelper,GizmoViewport} from "@react-three/drei";
+import { PresentationControls,GizmoHelper,GizmoViewport} from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 //  react three hook便于获取three场景元素
 import { useThree } from "@react-three/fiber";

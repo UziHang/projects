@@ -1,0 +1,95 @@
+import React, { useEffect, useRef,useState } from "react";
+import { PresentationControls,OrbitControls,ContactShadows,GizmoHelper,GizmoViewport} from "@react-three/drei";
+import { Canvas, useFrame } from "@react-three/fiber";
+//  react three hook便于获取three场景元素
+import { useThree } from "@react-three/fiber";
+import isPC from '../../public/js/util';
+import Model from "./Model";
+
+
+const TwoPeople = () => {
+  const [isPc,setIsPc]=useState(isPC)
+  return (
+    // 定义渲染场景
+    <div
+      style={{
+        height: "100vh",
+        width: "100vw",
+      }}
+    >
+      {/* 定义React three Fiber Scene */}
+      <Canvas
+        flat
+        shadows
+        dpr={[1, 2]} //像素比m in,max
+        camera={{
+          // 配置摄像头
+          fov: 36, //视角
+          position: [0, 0,4], // 摄像头位置
+        }}
+        resize={{
+          scroll: true,
+          debounce: {
+            scroll: 50,
+            resize: 0,
+          },
+        }}
+      >
+        {/* 背景色 */}
+        {/* <color attach="background" args={["#ECE8E0"]} /> */}
+        {/* 环境光源   颜色      会导致地板材质丢失   强度 */}
+        {/* <ambientLight color="#fff" intensity={10} /> */}
+        {/*  点光光源   */}
+        <pointLight color="#fff" position={[0,1,5]}  intensity={2} />
+        {/*  阴影  */}
+
+       
+
+        {/* 展示控制 */}
+        <PresentationControls
+          global //全局旋转或者拖拽模型
+          // cursor //是否在拖动上切换光标样式
+          speed={5} //灵敏性级别控制
+          zoom={0.4} //最大缩放级别
+          snap  // 复位
+          rotation={[0, Math.PI / 2, 0]} //模型默认旋转角度
+          polar={[0, Math.PI / 8]} //垂直极限控制
+          azimuth={[-Math.PI /5, Math.PI / 5]} //水平极限控制
+          config={{ mass: 1, tension: 100, friction: 20 }} // Spring的配置=》质量 张力 摩擦力
+        >
+          <Model
+            scale={0.08}
+            position={[0, -0.5, 0]}
+            onPointerMissed={() => {
+              console.log("动画结束");
+            }}
+          />
+
+           {/* 视角辅助器 */}
+        <GizmoHelper
+          alignment="bottom-left" // widget alignment within scene
+          margin={[80, 80]} // widget margins (X, Y)
+          onUpdate={() => {
+            /* called during camera animation  */
+          }}
+          onTarget={() => {
+            /* return current camera target (e.g. from orbit controls) to center animation */
+          }}
+          renderPriority={() => {
+            /* use renderPriority to prevent the helper from disappearing if there is another useFrame(..., 1)*/
+          }}
+        >
+          <GizmoViewport
+            axisColors={["red", "green", "yellow"]}
+            labelColor="black"
+          />
+          {/* alternative: <GizmoViewcube /> */}
+        </GizmoHelper>
+      
+         {/* <OrbitControls /> */}
+        </PresentationControls>
+      </Canvas>
+    </div>
+  );
+};
+export default TwoPeople;
