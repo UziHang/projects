@@ -1,0 +1,73 @@
+/* From uiverse.io by @ShadowShahriar */
+.dancing {
+    --border-radius: 15px;
+    --border-width: 4px;
+    appearance: none;
+    position: fixed;
+    bottom: 10vh;
+    left: 50%;
+    margin-left: -50px;
+    border: 0;
+    width: 100px;
+    height: 50px;
+    border-radius: 16px;
+    font-family: "Roboto", Arial, "Segoe UI", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    z-index: 2;
+    background-color: #000;
+   }
+   
+   .dancing::after {
+    --m-i: linear-gradient(#000, #000);
+    --m-o: content-box, padding-box;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 101%;
+    height: 101%;
+    overflow: hidden;
+    padding: var(--border-width);
+    border-radius: var(--border-radius);
+    background-image: conic-gradient(
+           #488cfb,
+           #29dbbc,
+           #ddf505,
+           #ff9f0e,
+           #e440bb,
+           #655adc,
+           #488cfb
+       );
+    -webkit-mask-image: var(--m-i), var(--m-i);
+    mask-image: var(--m-i), var(--m-i);
+    -webkit-mask-origin: var(--m-o);
+    mask-origin: var(--m-o);
+    -webkit-mask-clip: var(--m-o);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    filter: hue-rotate(0);
+    animation: rotate-hue linear 500ms infinite;
+    animation-play-state: paused;
+    animation-play-state: running;
+   }
+   
+   .dancing:hover::after {
+    animation-play-state: running;
+   }
+   
+   @keyframes rotate-hue {
+    to {
+     filter: hue-rotate(1turn);
+    }
+   }
+   
+   .dancing,
+   .dancing::after {
+    box-sizing: border-box;
+   }
+   
+   .dancing:active {
+    --border-width: 5px;
+   }
