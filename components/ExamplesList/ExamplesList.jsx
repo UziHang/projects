@@ -23,7 +23,7 @@ export function ExamplesList() {
         <ExampleCard link="/bird" thumbnail="/thumbnails/bird.jpg" title="雪中鸟3D" introduction="react-three-drei 镜头，阴影(开发中)" />
         <ExampleCard link="/paintings" thumbnail="/thumbnails/paintings.png" title="卷轴画3D" introduction="react-three-drei 2d视角锁定（开发中）" />
         <ExampleCard link="/twoPeople" thumbnail="/thumbnails/twoPeople.png" title="二人游3D" introduction="react-three-drei 弹簧控制（开发中）" />
-        <ExampleCard link="/avatar3D2" thumbnail="/thumbnails/twoPeople.png" title="xiumi" introduction="react-three-drei 动作，服装切换练习" />
+        <ExampleCard link="/avatar3D2" thumbnail="/thumbnails/twoPeople.png" title="girl" introduction="react-three-drei 动作，服装切换练习" />
         </ExamplesRow>
       <ExamplesRow title={"study demo"}>
       <ExampleCard link="/levels" thumbnail="/thumbnails/level1.png" title="Levels demo" introduction="react  react-three-fiber  学习demo, 仿官方教程" />
