@@ -27,6 +27,7 @@ export function ExamplesList() {
         </ExamplesRow>
       <ExamplesRow title={"study demo"}>
       <ExampleCard link="/levels" thumbnail="/thumbnails/level1.png" title="Levels demo" introduction="react  react-three-fiber  学习demo, 仿官方教程" />
+      <ExampleCard link="/study/index.html" thumbnail="/thumbnails/level1.png" title="three base demo" introduction="threejs demo 练习" />
       </ExamplesRow>
     </div>
   )
