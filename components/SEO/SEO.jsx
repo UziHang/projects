@@ -8,6 +8,7 @@ export function SEO({ title, image, description }) {
       <meta property="og:title" content={title}></meta>
       <meta property="og:image" content={image}></meta>
       <meta property="og:description" content={description}></meta>
+      
     </Head>
   )
 }
