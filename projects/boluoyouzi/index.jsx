@@ -11,6 +11,13 @@ const Boluoyouzi = () => {
   return (
     <StrictMode>
       {/* 模型加载为异步需要Suspense包裹 */}
+     
+      <Image
+        style={{opacity:0.75}}
+        width={750}
+        height={1476}
+        layout='fill'
+       src="/projectsAssets/boluoyouzi/images/model_bg.png" />
       <Suspense>
          <Pineapples speed={speed} />
       </Suspense>

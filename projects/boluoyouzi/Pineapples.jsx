@@ -70,11 +70,12 @@ function Pineapple({ index, z, speed }) {
   )
 }
 
-export default function Pineapples({ speed = 1, count = 80, depth = 80, easing = (x) => Math.sqrt(1 - Math.pow(x - 1, 2)) }) {
+export default function Pineapples({ speed = 5, count = 70, depth = 80, easing = (x) => Math.sqrt(1 - Math.pow(x - 1, 2)) }) {
   return (
     // 不需要抗锯齿（更快），dpr 将分辨率限制在 1.5（也比全分辨率更快）
-    <Canvas style={{width:'100vw',height:'100vh',position:'fixed'}}gl={{ antialias: false }} dpr={[1, 1.5]} camera={{ position: [0, 0, 10], fov: 20, near: 0.01, far: depth + 15 }}>
-      <color attach="background" args={['#ffbf40']} />
+    <Canvas style={{width:'100vw',height:'100vh',position:'fixed'}}gl={{ antialias: false }} dpr={[1, 1.5]} camera={{ position: [0, 0, 8], fov: 20, near: 0.01, far: depth + 15 }}>
+      {/* <color attach="background" args={['#ffbf40']} /> */}
+    
       <spotLight position={[10, 20, 10]} penumbra={1} intensity={3} color="orange" />
       {/* 在这里使用立方缓动函数以更有趣的方式展开对象，我想要一个单独的大对象在前面... */}
       {Array.from({ length: count }, (_, i) => <Pineapple key={i} index={i} z={Math.round(easing(i / count) * depth)} speed={speed} /> /* prettier-ignore */)}
