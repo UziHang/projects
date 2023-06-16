@@ -15,7 +15,7 @@ function Pineapple({ index, z, speed }) {
   const { width, height } = viewport.getCurrentViewport(camera, [0, 0, -z])
   // useGLTF 是对 R3F 的 useLoader(GLTFLoader, url) 的一个封装
   // 它可以自动处理包含 draco 和 meshopt 压缩的资源，无需担心二进制等...
-  const { nodes, materials } = useGLTF('projectsAssets/boluoyouzi/models/pineapple.gltf')
+  const { nodes, materials } = useGLTF('/projectsAssets/boluoyouzi/models/pineapple.gltf')
   // 到这一步时，模型已经加载完毕，这是通过 React suspense 实现的
 
   // 组件的本地状态，可以安全地进行修改，因为它是固定的数据
