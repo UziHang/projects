@@ -79,7 +79,11 @@ export default function Pineapples({ speed = 5, count = 70, depth = 80, easing =
       <spotLight position={[10, 20, 10]} penumbra={1} intensity={3} color="orange" />
       {/* 在这里使用立方缓动函数以更有趣的方式展开对象，我想要一个单独的大对象在前面... */}
       {Array.from({ length: count }, (_, i) => <Pineapple key={i} index={i} z={Math.round(easing(i / count) * depth)} speed={speed} /> /* prettier-ignore */)}
-      <Environment preset="sunset" />
+
+      {/* 国内网络丢失 */}
+      {/* <Environment preset="sunset" /> */}
+      {/* <Environment path="/hdri/" files="venice_sunset_1k.hdr" /> */}
+
       {/* 多重采样（MSAA）是 WebGL2 的抗锯齿功能，我们不需要它（更快） */}
       {/* <EffectComposer multisampling={0}>
         <DepthOfField target={[0, 0, 60]} focalLength={0.4} bokehScale={14} height={700} />

@@ -6,6 +6,7 @@ import {
 } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import Image from "next/image";
+import Link from 'next/link'
 import styles from "./App.module.css";
 import "./global.module.css";
 const App = () => {
@@ -22,7 +23,9 @@ const App = () => {
       />
       <div className={styles.buttons}>
         <div className={styles.cyberButton}>查看故事</div>
+        <Link href="/boluoyouzi/name-list">
         <div className={styles.cyberButton}>黑猫战士</div>
+        </Link>
         <div className={styles.cyberButton}>众所周知</div>
         <div className={styles.cyberButton}>关于作者</div>
       </div>
