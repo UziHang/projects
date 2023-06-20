@@ -12,3 +12,258 @@
     height: 100%;
     width: 100%;
   }
+
+
+.container {
+    background-repeat: round;
+    background-size: cover;
+    height: 32vh;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    transition: all 1s linear;
+    width: 100vw;
+    z-index: 100
+}
+
+.container .content {
+    bottom: 0;
+    height: 22vh;
+    left: 0;
+    position: absolute;
+    right: 0;
+    width: 100vw
+}
+
+@media screen and (min-aspect-ratio: 375/667) {
+    .container {
+        top:-4.4444vw
+    }
+}
+
+.notShow {
+    opacity: 0
+}
+
+.rightEyeGlowAni{
+    animation: eyeGlowAniKey 1s linear 0s 1 normal both;
+    height: 14.5778vw;
+    left: 60.2667vw;
+    position: absolute;
+    top: 4.2889vw;
+    -ms-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+    width: 16.9778vw
+}
+
+.rightEyeAni {
+    animation: rightEyeAniKey 5s cubic-bezier(.25,0,.75,1) -1s infinite normal both;
+    background: url(/projectsAssets/boluoyouzi/images/namelist/eye2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 14.5778vw;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 16.9778vw
+}
+
+@keyframes rightEyeAniKey {
+    0% {
+        transform: scale(1) rotate(15deg)
+    }
+
+    32.5% {
+        transform: scale(1) rotate(15deg)
+    }
+
+    35% {
+        transform: scaleY(.05) rotate(15deg)
+    }
+
+    37.5% {
+        transform: scale(1) rotate(15deg)
+    }
+
+    40% {
+        transform: scaleY(.05) rotate(15deg)
+    }
+
+    42.5% {
+        transform: scale(1) rotate(15deg)
+    }
+
+    to {
+        transform: rotate(15deg)
+    }
+}
+
+.rightBeardAni {
+    animation: rightBeardAniKey 5s cubic-bezier(.25,0,.75,1) 1s infinite normal both;
+    background: url(/projectsAssets/boluoyouzi/images/namelist/beard2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 24.8889vw;
+    left: 63.9111vw;
+    position: absolute;
+    top: 20.0222vw;
+    -ms-transform-origin: -30% -10%;
+    transform-origin: -30% -10%;
+    width: 36.2667vw;
+}
+
+@keyframes rightBeardAniKey {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    5% {
+        transform: rotate(-4deg)
+    }
+
+    10% {
+        transform: rotate(3deg)
+    }
+
+    15% {
+        transform: rotate(-4deg)
+    }
+
+    20% {
+        transform: rotate(3deg)
+    }
+
+    25% {
+        transform: rotate(-2deg)
+    }
+
+    30% {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(0deg)
+    }
+}
+
+.leftBeardAni {
+    animation: leftBeardAniKey 5s cubic-bezier(.25,0,.75,1) 1s infinite normal both;
+    background: url(/projectsAssets/boluoyouzi/images/namelist/beard.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 25.2vw;
+    left: 0;
+    position: absolute;
+    top: 20.4667vw;
+    -ms-transform-origin: 130% -10%;
+    transform-origin: 130% -10%;
+    width: 37.7778vw
+}
+
+@keyframes leftBeardAniKey {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    5% {
+        transform: rotate(4deg)
+    }
+
+    10% {
+        transform: rotate(-3deg)
+    }
+
+    15% {
+        transform: rotate(4deg)
+    }
+
+    20% {
+        transform: rotate(-3deg)
+    }
+
+    25% {
+        transform: rotate(2deg)
+    }
+
+    30% {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(0deg)
+    }
+}
+
+.leftEyeGlowAni {
+    animation: eyeGlowAniKey 1s linear 0s 1 normal both;
+    height: 14.5778vw;
+    left: 23.8222vw;
+    position: absolute;
+    top: 4.2889vw;
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
+    width: 15.8222vw
+}
+
+@keyframes eyeGlowAniKey {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.leftEyeAni{
+    animation: leftEyeAniKey 5s cubic-bezier(.25,0,.75,1) -1s infinite normal both;
+    background: url(/projectsAssets/boluoyouzi/images/namelist/eye.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 14.5778vw;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 15.8222vw
+}
+
+@keyframes leftEyeAniKey {
+    0% {
+        transform: scale(1) rotate(-15deg)
+    }
+
+    32.5% {
+        transform: scale(1) rotate(-15deg)
+    }
+
+    35% {
+        transform: scaleY(.05) rotate(-15deg)
+    }
+
+    37.5% {
+        transform: scale(1) rotate(-15deg)
+    }
+
+    40% {
+        transform: scaleY(.05) rotate(-15deg)
+    }
+
+    42.5% {
+        transform: scale(1) rotate(-15deg)
+    }
+
+    to {
+        transform: rotate(-15deg)
+    }
+}
+
+.nose {
+    background: url(/projectsAssets/boluoyouzi/images/namelist/nose.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 4.08889vw;
+    left: 44.7111vw;
+    position: absolute;
+    top: 23.7111vw;
+    width: 11.1111vw
+}
