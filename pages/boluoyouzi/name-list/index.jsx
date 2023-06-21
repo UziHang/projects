@@ -5,7 +5,7 @@ export default function Index() {
  return(
      <div>
      <SEO
-        title="《菠萝油子》 ft:黑猫吃警长"
+        title="黑猫の战士们"
         description="react react-three-fiber 镜头操控"
         image="/logo.png"
       />

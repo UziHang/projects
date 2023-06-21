@@ -12,13 +12,20 @@ const Boluoyouzi = () => {
       {/* 模型加载为异步需要Suspense包裹 */}
       <Suspense fallback={<Loader />}>
         <div
-        style={{ width:'100vw',height:'100vh', opacity: 0.75, position: "fixed",bottom:0}}>
-        <Image
-          width={750}
-          height={1476}
-          layout="fill"
-          src="/projectsAssets/boluoyouzi/images/model_bg.png"
-        />
+          style={{
+            width: "100vw",
+            height: "100vh",
+            opacity: 0.75,
+            position: "fixed",
+            bottom: 0,
+          }}
+        >
+          <Image
+            width={750}
+            height={1476}
+            layout="fill"
+            src="/projectsAssets/boluoyouzi/images/model_bg.png"
+          />
         </div>
         <App />
       </Suspense>
