@@ -81,7 +81,7 @@ export default function Pineapples({ speed = 5, count = 70, depth = 80, easing =
       {Array.from({ length: count }, (_, i) => <Pineapple key={i} index={i} z={Math.round(easing(i / count) * depth)} speed={speed} /> /* prettier-ignore */)}
 
       {/* 国内网络丢失 */}
-      {/* <Environment preset="sunset" /> */}
+      <Environment preset="sunset" />
       {/* <Environment path="/hdri/" files="venice_sunset_1k.hdr" /> */}
 
       {/* 多重采样（MSAA）是 WebGL2 的抗锯齿功能，我们不需要它（更快） */}

@@ -2,8 +2,10 @@ import * as THREE from "three";
 import { useRef, useState, useMemo, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Text, Text3D, TrackballControls } from "@react-three/drei";
-import {} from "@react-three/fiber";
+import { useSpring, animated } from "@react-spring/three";
 import styles from "./NameList.module.css";
+
+import Oil from "./layout/Oil";
 
 function Word({ children, ...props }) {
   const color = new THREE.Color();
@@ -19,6 +21,7 @@ function Word({ children, ...props }) {
   const [hovered, setHovered] = useState(false);
   const over = (e) => (e.stopPropagation(), setHovered(true));
   const out = () => setHovered(false);
+  console.log(ref.current)
 
   // Change the mouse cursor on hover
   useEffect(() => {
@@ -29,20 +32,23 @@ function Word({ children, ...props }) {
   useFrame(({ camera }) => {
     // Make text face the camera
     ref.current.quaternion.copy(camera.quaternion);
+
     // Animate font color
     ref.current.material.color.lerp(
-      color.set(hovered ? "#fa2720" : "white"),
+      color.set(hovered ? "rgb(252, 179, 44);" : "white"),
       0.1
     );
   });
   return (
     <Text
+      className={styles.cyberButton}
       ref={ref}
       onPointerOver={over}
       onPointerOut={out}
       onClick={over}
       {...props}
       {...fontProps}
+      // eslint-disable-next-line react/no-children-prop
       children={children}
     />
   );
@@ -97,6 +103,7 @@ function Cloud({ count = 4, radius = 20 }) {
       "雪碧",
       "花石夏",
       "nicolos",
+      '果盘','透明木盆'
     ];
     const temp = [];
     console.log(names.length);
@@ -119,9 +126,17 @@ function Cloud({ count = 4, radius = 20 }) {
   ));
 }
 
+
+
+
+
 export default function NameList() {
+
+
+
   return (
     <div className={styles.root}>
+      {/* 顶部猫 */}
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.rightBeardAni}></div>
@@ -135,16 +150,17 @@ export default function NameList() {
           <div className={styles.nose}></div>
         </div>
       </div>
-      <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 60], fov: 90 }}>
+      <Canvas dpr={[1, 2]} camera={{ position: [0, 10, 60], fov: 90 }}>
         <fog attach="fog" args={["#202025", 30, 100]} />
         <Cloud count={7} radius={20} />
-        <TrackballControls />
+        <Oil />
+        <TrackballControls   />
         {/* 辅助线 */}
-        <axesHelper
+        {/* <axesHelper
           scale={100}
           position={[0, 0, 0]}
           onUpdate={(self) => self.setColors("#ff2080", "#20ff80", "#2080ff")}
-        />
+        /> */}
       </Canvas>
     </div>
   );
