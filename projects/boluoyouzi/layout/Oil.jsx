@@ -9,7 +9,6 @@ import { a } from '@react-spring/three'
 const AnimatedMaterial = a(MeshDistortMaterial)
 
 export default function Oil({ setBg }) {
-  const sphere = useRef()
   const light = useRef()
   const [mode, setMode] = useState(false)
   const [down, setDown] = useState(false)
@@ -32,18 +31,15 @@ export default function Oil({ setBg }) {
 
   return (
     <>
-     
-      <Suspense fallback={null}>
         <a.ambientLight intensity={ambient} />
         <a.pointLight ref={light} position-z={-15} intensity={env} color="#F8C069" />
         <a.mesh
-          ref={sphere}
           scale={10}
        >
           <sphereBufferGeometry args={[1, 64, 64]} />
           <AnimatedMaterial color={color} envMapIntensity={env} clearcoat={coat} clearcoatRoughness={0} metalness={0.1} />
         </a.mesh>
-        <Environment preset="warehouse" />
+        {/* <Environment preset="warehouse" /> */}
         <ContactShadows
           rotation={[Math.PI / 2, 0, 0]}
           position={[0, -1.6, 0]}
@@ -53,7 +49,6 @@ export default function Oil({ setBg }) {
           blur={2.5}
           far={1.6}
         />
-      </Suspense>
     </>
   )
 }

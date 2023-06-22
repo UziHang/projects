@@ -1,7 +1,13 @@
 import * as THREE from "three";
-import { useRef, useState, useMemo, useEffect } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Text, Text3D, TrackballControls } from "@react-three/drei";
+import { useRef, useState, useMemo, useEffect, Suspense } from "react";
+import { Canvas, extend, useFrame } from "@react-three/fiber";
+import {
+  Text,
+  Text3D,
+  OrbitControls,
+  TrackballControls,
+} from "@react-three/drei";
+import { Loader } from "@react-three/drei";
 import { useSpring, animated } from "@react-spring/three";
 import styles from "./NameList.module.css";
 
@@ -21,7 +27,6 @@ function Word({ children, ...props }) {
   const [hovered, setHovered] = useState(false);
   const over = (e) => (e.stopPropagation(), setHovered(true));
   const out = () => setHovered(false);
-  console.log(ref.current)
 
   // Change the mouse cursor on hover
   useEffect(() => {
@@ -103,7 +108,8 @@ function Cloud({ count = 4, radius = 20 }) {
       "雪碧",
       "花石夏",
       "nicolos",
-      '果盘','透明木盆'
+      "果盘",
+      "透明木盆",
     ];
     const temp = [];
     console.log(names.length);
@@ -126,42 +132,59 @@ function Cloud({ count = 4, radius = 20 }) {
   ));
 }
 
+const Cat = () => {
+  return (
+    <div className={styles.container}>
+      <div className={styles.content}>
+        <div className={styles.rightBeardAni}></div>
+        <div className={styles.leftBeardAni}></div>
+        <div className={styles.leftEyeGlowAni}>
+          <div className={styles.leftEyeAni}></div>
+        </div>
+        <div className={styles.rightEyeGlowAni}>
+          <div className={styles.rightEyeAni}></div>
+        </div>
+        <div className={styles.nose}></div>
+      </div>
+    </div>
+  );
+};
 
 
-
+const ControlFunc = () => {
+  const controlRef = useRef();
+  useFrame(() => {
+    // 更新控制器
+    controlRef.current.update()
+  });
+  return (
+    <TrackballControls
+      ref={controlRef}
+      // autoRotate
+    />
+  );
+};
 
 export default function NameList() {
-
-
-
   return (
-    <div className={styles.root}>
-      {/* 顶部猫 */}
-      <div className={styles.container}>
-        <div className={styles.content}>
-          <div className={styles.rightBeardAni}></div>
-          <div className={styles.leftBeardAni}></div>
-          <div className={styles.leftEyeGlowAni}>
-            <div className={styles.leftEyeAni}></div>
-          </div>
-          <div className={styles.rightEyeGlowAni}>
-            <div className={styles.rightEyeAni}></div>
-          </div>
-          <div className={styles.nose}></div>
-        </div>
-      </div>
-      <Canvas dpr={[1, 2]} camera={{ position: [0, 10, 60], fov: 90 }}>
-        <fog attach="fog" args={["#202025", 30, 100]} />
-        <Cloud count={7} radius={20} />
-        <Oil />
-        <TrackballControls   />
-        {/* 辅助线 */}
-        {/* <axesHelper
+    <Suspense fallback={<Loader />}>
+      <div className={styles.root}>
+        <Cat />
+        <Canvas dpr={[1, 2]} camera={{ position: [10, 10, 60], fov: 90 }}>
+          <fog attach="fog" args={["#202025", 30, 100]} />
+          <Cloud count={7} radius={20} />
+          <Oil />
+          <TrackballControls
+   
+    />
+          {/* 辅助线 */}
+          {/* <axesHelper
           scale={100}
           position={[0, 0, 0]}
           onUpdate={(self) => self.setColors("#ff2080", "#20ff80", "#2080ff")}
         /> */}
-      </Canvas>
-    </div>
+        </Canvas>
+      </div>
+    </Suspense>
   );
 }
