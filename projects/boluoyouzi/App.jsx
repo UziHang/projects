@@ -26,7 +26,7 @@ const App = () => {
   return (
     <>
    
-        <div style={{opacity:modelVisible?1:0}} className={styles.models}>
+        <div style={{visibility:modelVisible?'visible':'hidden'}} className={styles.models}>
           <Pineapples speed={speed} />
         </div>
       {/* // 定义渲染场景 */}
