@@ -63,11 +63,11 @@ const App = () => {
         
         </div>
         <div className={styles.mouse}>
-            <Image
+{ modelVisible&&<Image
               width={30}
               height={30}
               src="/projectsAssets/boluoyouzi/images/mouse.png"
-            />
+            />}
           </div>
 
         <div className={styles.buttons}>
