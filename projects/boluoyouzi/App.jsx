@@ -11,10 +11,10 @@ import "./global.module.css";
 import Pineapples from "./layout/Pineapples";
 
 const App = () => {
-  const [speed, set] = useState(1);
+  const [speed, set] = useState(2);
   const [modelVisible, setModelVisible] = useState(false);
   const [change, setChange] = useState(false);
-  const [open,setOpen]=useState(false)
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     // 模拟异步获取组件列表
@@ -25,10 +25,12 @@ const App = () => {
 
   return (
     <>
-   
-        <div style={{visibility:modelVisible?'visible':'hidden'}} className={styles.models}>
-          <Pineapples speed={speed} />
-        </div>
+      <div
+        style={{ visibility: modelVisible ? "visible" : "hidden" }}
+        className={styles.models}
+      >
+        <Pineapples speed={speed} />
+      </div>
       {/* // 定义渲染场景 */}
       <div className={styles.layout}>
         <div className={styles.topTitle}>
@@ -58,16 +60,38 @@ const App = () => {
             step="1"
             onChange={(e) => set(e.target.value)}
           />
+        
         </div>
+        <div className={styles.mouse}>
+            <Image
+              width={30}
+              height={30}
+              src="/projectsAssets/boluoyouzi/images/mouse.png"
+            />
+          </div>
+
         <div className={styles.buttons}>
-          <div className={styles.cyberButton} onClick={()=>alert('开发中QAQ')}>众所周知</div>
-          <div className={styles.cyberButton} onClick={()=>alert('开发中QAQ')}>
+          <div
+            className={styles.cyberButton}
+            onClick={() => alert("开发中QAQ")}
+          >
+            众所周知
+          </div>
+          <div
+            className={styles.cyberButton}
+            onClick={() => alert("开发中QAQ")}
+          >
             <span>查看故事</span>
           </div>
           <Link href="/boluoyouzi/name-list">
             <div className={styles.cyberButton}>黑猫战士</div>
           </Link>
-          <div className={styles.cyberButton} onClick={()=>alert('开发中QAQ')}>菠萝油子</div>
+          <div
+            className={styles.cyberButton}
+            onClick={() => alert("开发中QAQ")}
+          >
+            菠萝油子
+          </div>
         </div>
 
         <div
@@ -78,15 +102,16 @@ const App = () => {
         </div>
         <div className={styles.bigBtn} onClick={() => setChange(!change)}>
           啊啊啊~
-        </div >
-        {change&&<div className={styles.feifei}>
-        <Image
-          width={80}
-          height={60}
-          src="/projectsAssets/boluoyouzi/images/feifei.jpg"
-        />
-        </div>}
-       
+        </div>
+        {change && (
+          <div className={styles.feifei}>
+            <Image
+              width={80}
+              height={60}
+              src="/projectsAssets/boluoyouzi/images/feifei.jpg"
+            />
+          </div>
+        )}
       </div>
     </>
   );

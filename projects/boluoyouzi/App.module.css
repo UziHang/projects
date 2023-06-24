@@ -131,8 +131,23 @@
   transform: rotate(90deg) translate3d(50%, 0, 0);
   transform-origin: 100% 50%;
   animation: textpopupright 10s forwards;
+  z-index: 1;
 }
 
+ .mouse {
+  position: fixed;
+  top: 65vh;
+  right: 5vw;
+  animation: rotate 4s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
 
 .rightMiddle input[type='range'] {
   display: block;
@@ -157,6 +172,7 @@
   border-radius: 50%;
   cursor: pointer;
   transition: 0.3s ease-in-out;
+  z-index: 99;
 }
 
 .rightMiddle input[type='range'] ::-webkit-slider-thumb:active {
