@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.4",
     "@react-spring/three": "^9.7.2",
     "@react-three/drei": "^9.74.16",
     "@react-three/fiber": "^8.0.10",

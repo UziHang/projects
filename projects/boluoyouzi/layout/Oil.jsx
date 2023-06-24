@@ -39,6 +39,7 @@ export default function Oil({ setBg }) {
           <sphereBufferGeometry args={[1, 64, 64]} />
           <AnimatedMaterial color={color} envMapIntensity={env} clearcoat={coat} clearcoatRoughness={0} metalness={0.1} />
         </a.mesh>
+         <ambientLight  intensity={0.2}  />
         {/* <Environment preset="warehouse" /> */}
         <ContactShadows
           rotation={[Math.PI / 2, 0, 0]}

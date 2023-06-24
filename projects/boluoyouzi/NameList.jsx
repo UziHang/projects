@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import { useRef, useState, useMemo, useEffect, Suspense } from "react";
-import { Canvas, extend, useFrame } from "@react-three/fiber";
+import { Canvas, extend, useFrame, useThree } from "@react-three/fiber";
 import {
   Text,
   Text3D,
@@ -8,10 +8,11 @@ import {
   TrackballControls,
 } from "@react-three/drei";
 import { Loader } from "@react-three/drei";
-import { useSpring, animated } from "@react-spring/three";
+import { useSpring, animated, a } from "@react-spring/three";
 import styles from "./NameList.module.css";
 
 import Oil from "./layout/Oil";
+import { update } from "react-spring";
 
 function Word({ children, ...props }) {
   const color = new THREE.Color();
@@ -113,6 +114,8 @@ function Cloud({ count = 4, radius = 20 }) {
     ];
     const temp = [];
     console.log(names.length);
+    const newArray =names.sort(() => Math.random() - 0.5);
+
     const spherical = new THREE.Spherical();
     const phiSpan = Math.PI / (count + 1);
     const thetaSpan = (Math.PI * 2) / count;
@@ -122,7 +125,7 @@ function Cloud({ count = 4, radius = 20 }) {
           new THREE.Vector3().setFromSpherical(
             spherical.set(radius, phiSpan * i, thetaSpan * j)
           ),
-          names[temp.length - 1],
+          newArray[temp.length - 1],
         ]);
       }
     return temp;
@@ -150,33 +153,41 @@ const Cat = () => {
   );
 };
 
+export default function NameList() {
 
-const ControlFunc = () => {
-  const controlRef = useRef();
-  useFrame(() => {
-    // 更新控制器
-    controlRef.current.update()
+
+
+
+const  Box =(props)=> {
+  const { camera } = useThree();
+  
+  // 使用 useSpring 定义摄像头的动画属性
+  const { position } = useSpring({
+    from: { position: [20, 30, 60] },
+    to: { position: [0, 0,0] },
+    config: { duration: 5000 }
   });
   return (
-    <TrackballControls
-      ref={controlRef}
-      // autoRotate
-    />
-  );
-};
+    <a.mesh position={position}>
+    <Oil />
+    <Cloud count={7} radius={20} />
+    </a.mesh>
+  )
+}
 
-export default function NameList() {
+
+
+
   return (
     <Suspense fallback={<Loader />}>
       <div className={styles.root}>
         <Cat />
-        <Canvas dpr={[1, 2]} camera={{ position: [10, 10, 60], fov: 90 }}>
+        <Canvas dpr={[1, 2]} camera={{ position: [20, 30, 50], fov: 90 }}>
           <fog attach="fog" args={["#202025", 30, 100]} />
-          <Cloud count={7} radius={20} />
-          <Oil />
-          <TrackballControls
-   
-    />
+          <ambientLight  intensity={0.3}  />
+          <Box/>
+          <OrbitControls autoRotate autoRotateSpeed={0.8} />
+          <TrackballControls />
           {/* 辅助线 */}
           {/* <axesHelper
           scale={100}

@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import { useRef, useState } from 'react'
 import { Canvas, useThree, useFrame } from '@react-three/fiber'
 // https://github.com/pmndrs/drei
-import { useGLTF, Detailed, Environment } from '@react-three/drei'
+import { useGLTF, Detailed, Environment,Fade } from '@react-three/drei'
 // https://github.com/pmndrs/react-postprocessing
 // https://github.com/vanruesc/postprocessing
 // import { EffectComposer, DepthOfField } from '@react-three/postprocessing'
@@ -70,16 +70,15 @@ function Pineapple({ index, z, speed }) {
   )
 }
 
-export default function Pineapples({ speed = 5, count = 70, depth = 80, easing = (x) => Math.sqrt(1 - Math.pow(x - 1, 2)) }) {
+export default function Pineapples({speed = 5, count = 70, depth = 80, easing = (x) => Math.sqrt(1 - Math.pow(x - 1, 2)) }) {
   return (
     // 不需要抗锯齿（更快），dpr 将分辨率限制在 1.5（也比全分辨率更快）
     <Canvas style={{width:'100vw',height:'100vh',position:'fixed'}}gl={{ antialias: false }} dpr={[1, 1.5]} camera={{ position: [0, 0, 8], fov: 20, near: 0.01, far: depth + 15 }}>
       {/* <color attach="background" args={['#ffbf40']} /> */}
-    
+      <ambientLight  intensity={0.2}  />
       <spotLight position={[10, 20, 10]} penumbra={1} intensity={3} color="orange" />
       {/* 在这里使用立方缓动函数以更有趣的方式展开对象，我想要一个单独的大对象在前面... */}
-      {Array.from({ length: count }, (_, i) => <Pineapple key={i} index={i} z={Math.round(easing(i / count) * depth)} speed={speed} /> /* prettier-ignore */)}
-
+      {Array.from({ length: count }, (_, i) => <Pineapple key={i} index={i} z={Math.round(easing(i / count) * depth)} speed={speed}  /> /* prettier-ignore */)}
       {/* 国内网络丢失 */}
       {/* <Environment preset="sunset" /> */}
       {/* <Environment path="/hdri/" files="venice_sunset_1k.hdr" /> */}

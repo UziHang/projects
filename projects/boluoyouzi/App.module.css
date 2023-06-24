@@ -1,18 +1,21 @@
+
+ @font-face {
+  font-family: 'AlibabaPuHuiTi';
+  src:url('/AlibabaPuHuiTi-3-45-Light.woff') format('woff')
+ }
 .layout {
     width: 100vw;
     height: 100vh;
     position: fixed;
-   
     z-index: 999;
-     /* font-family:  "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif; */
-     font-family: Baskerville, Georgia, "Liberation Serif", "Kaiti SC", STKaiti, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "AR PL UKai TW MBE", "AR PL KaitiM GB", KaiTi, KaiTi_GB2312, DFKai-SB, "TW\-Kai", serif;;
     }
   .topTitle {
   position: absolute;
   top:18vh;
   right: 10vw;
   text-align: left;
-  
+  animation: scale-in-left 1s both;
+  animation-delay: 1s;
 }
 .welcome {
   letter-spacing: 1px; 
@@ -20,52 +23,100 @@
   font-size: 20px;
   font-size: 500;
   color:  rgb(85, 250, 222);
-  font-family: Baskerville, Georgia, "Liberation Serif", "Kaiti SC", STKaiti, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "AR PL UKai TW MBE", "AR PL KaitiM GB", KaiTi, KaiTi_GB2312, DFKai-SB, "TW\-Kai", serif;;
+  font-family: 'AlibabaPuHuiTi';
 }
-.title {
+
+ .motorcycle {
+  animation: motorAni 1s cubic-bezier(0.895, 0.030, 0.685, 0.220) both;
+ }
  
+ .models {
+  animation: textpopupright 5s forwards;
+ }
+
+
+
+ .motorcycle:active {
+  filter: brightness(150%);
 }
-.textpopupright {
+
+.textpopupright span:first-child {
+  animation-delay: 2s;
+}
+
+
+.textpopupright span:nth-child(2) {
+  animation-delay: 2.5s;
+}
+
+.textpopupright span:nth-child(3) {
+  animation-delay: 3s;
+}
+
+.textpopupright span:nth-child(4) {
+  animation-delay: 3.5s;
+}
+
+.textpopupright span:nth-child(5) {
+  animation-delay: 4s;
+}
+.textpopupright span:nth-child(6) {
+  animation-delay: 4.5s;
+}
+
+
+
+
+ @keyframes  motorAni {
+  0% {
+    -webkit-transform: rotateY(20deg) rotateX(-35deg) translate(300px, 50px) skew(35deg, -10deg);
+            transform: rotateY(20deg) rotateX(-35deg) translate(300px, 50px) skew(35deg, -10deg);
+    opacity: 0;
+    /* transform: scale(0.2); */
+  }
+  100% {
+    -webkit-transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+            transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+    opacity: 1;
+    /* transform: scale(1); */
+  }
+}
+
+
+
+.change {
+  letter-spacing: 3px; 
+  font-size: 25px;
+  color: rgb(247, 73, 34);
+  font-weight: bold;
+  text-shadow: 1px 2px 1px rgb(252, 179, 44), 1px 1px 1px  rgb(245,60,20);
+  animation: glitch_4011 1s;
+}
+.feifei {
+  border-radius: 10px;
+  overflow: hidden;
+  position: absolute;
+  bottom: -5px;
+  transform: rotate(-30deg);
+  animation: glitch_4011 1s;
+}
+
+.textpopupright span {
+  /* font-family: 'AlibabaPuHuiTi'; */
   letter-spacing: 3px; 
   font-size: 35px;
   color: rgb(247, 73, 34);
   font-weight: bold;
-	-webkit-animation: textpopupright 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: textpopupright 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  opacity: 0;
+  animation: textpopupright 0.5s forwards;
 }
 
-@-webkit-keyframes textpopupright {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    text-shadow: none;
-  }
-  100% {
-    -webkit-transform: translateX(50px);
-            transform: translateX(50px);
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.3);
-  }
-}
-@keyframes textpopupright {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    text-shadow: none;
-  }
-  100% {
-    -webkit-transform: translateX(50px);
-            transform: translateX(50px);
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-            text-shadow: 1px 1px 0px rgb(252, 179, 44), 1px 1px 0px  rgb(245,60,20);
-  }
-}
+
+
+
+
+
+
 
 .rightMiddle {
   position: absolute;
@@ -78,6 +129,7 @@
   font-size: 12px;
   transform: rotate(90deg) translate3d(50%, 0, 0);
   transform-origin: 100% 50%;
+  animation: textpopupright 3s forwards;
 }
 
 
@@ -98,7 +150,7 @@
   -webkit-appearance: none;
   background: url(/projectsAssets/boluoyouzi/images/logo.png) no-repeat 100% 100%;
   background-size: cover;
-  transform: rotate(245deg) translate3d(0, 0, 0);
+  transform: rotate(230deg) translate3d(0, 0, 0);
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -113,58 +165,171 @@
 .buttons {
     position: absolute;
     bottom: 20vh;
+    animation: scale-in-left 1s both;
+    animation-delay: 1s;
 }
 
-.cyberButton,.cyberButton::after {
-    padding: 5px 30px;
-    font-size: 18px;
-    border: none;
-    /* border-radius: 5px; */
-    color: rgb(252, 179, 44);
-    font-weight: bold;
-    background-color: transparent;
-    position: relative;
+.mingzhongBtn,.bigBtn {
+  font-size: 30px;
+  /* border-radius: 5px; */
+  color: rgb(252, 179, 44);
+  font-weight: bold;
+  background-color: transparent;
+  position: fixed;
+  opacity: 0;
+  
+}
+.mingzhongBtn {
+  width: 40vw;
+  height: 30vw;
+  left: 10vw;
+  top: 0vh;
+  text-align: center;
+  line-height: 40vw;
+}
 
+.bigBtn {
+  width: 50vw;
+  height: 30vw;
+  left: 44vw;
+  top: 0vh;
+  line-height: 30vw;
+  text-align: center;
+}
+
+
+
+.cyberButton,.cyberButton::after {
+  padding: 5px 30px;
+  font-size: 18px;
+  border: none;
+  /* border-radius: 5px; */
+  color: rgb(252, 179, 44);
+  font-weight: bold;
+  background-color: transparent;
+  position: relative;
+}
+
+.mingzhongBtn::after,.bigBtn::after, .cyberButton::after {
+  --move1: inset(50% 50% 50% 50%);
+  --move2: inset(31% 0 40% 0);
+  --move3: inset(39% 0 15% 0);
+  --move4: inset(45% 0 40% 0);
+  --move5: inset(45% 0 6% 0);
+  --move6: inset(14% 0 61% 0);
+  clip-path: var(--move1);
+  content: '一只脏狒';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+}
+
+.mingzhongBtn:active,.bigBtn:active,.cyberButton:hover::after {
+  animation: glitch_4011 1s;
+  text-shadow: 10 10px 10px black;
+  animation-timing-function: steps(2, end);
+  text-shadow: -3px -3px 0px rgb(252, 179, 44), 3px 3px 0px  rgb(245,60,20);
+  background-color: transparent;
+  /* border: 3px solid rgb(0, 255, 213); */
+}
+
+
+.cyberButton:hover {
+  background-color: transparent;
+  /* border: 1px solid rgb(0, 255, 213); */
+  box-shadow: 0px 10px 10px -10px rgb(252, 179, 44);
+  text-shadow: -1px -1px 0px rgb(252, 179, 44), 1px 1px 0px  rgb(245,60,20);
+}
+
+@keyframes textpopupright {
+  from {
+     opacity: 0;
   }
- 
-  .cyberButton::after {
-    --move1: inset(50% 50% 50% 50%);
-    --move2: inset(31% 0 40% 0);
-    --move3: inset(39% 0 15% 0);
-    --move4: inset(45% 0 40% 0);
-    --move5: inset(45% 0 6% 0);
-    --move6: inset(14% 0 61% 0);
-    clip-path: var(--move1);
-    content: 'GLITCH';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: block;
+  100% {
+    opacity: 1;
+    text-shadow: 1px 2px 1px rgb(252, 179, 44), 1px 1px 1px  rgb(245,60,20);
   }
-  
-  .cyberButton:hover::after {
-    animation: glitch_4011 1s;
-    text-shadow: 10 10px 10px black;
-    animation-timing-function: steps(2, end);
-    text-shadow: -3px -3px 0px rgb(252, 179, 44), 3px 3px 0px  rgb(245,60,20);
-    background-color: transparent;
-    /* border: 3px solid rgb(0, 255, 213); */
+}
+
+@keyframes scale-in-left {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    opacity: 1;
   }
-  
-  .cyberButton:hover {
-    text-shadow: -1px -1px 0px rgb(252, 179, 44), 1px 1px 0px  rgb(245,60,20);
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    opacity: 1;
   }
-  
-  .cyberButton:hover {
-    background-color: transparent;
-    /* border: 1px solid rgb(0, 255, 213); */
-    box-shadow: 0px 10px 10px -10px rgb(252, 179, 44);
+}
+
+@keyframes bounce-in-fwd {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 0;
   }
+  38% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: scale(0.84);
+            transform: scale(0.84);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  89% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+
+
+
   
   @keyframes glitch_4011 {
     0% {
+      opacity: 1;
       clip-path: var(--move1);
       transform: translate(0px,-10px);
     }
@@ -215,6 +380,7 @@
     }
   
     100% {
+      opacity: 1;
       clip-path: var(--move1);
       transform: translate(0);
     }
