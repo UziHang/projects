@@ -32,6 +32,7 @@
  
  .models {
   animation: textpopupright 5s forwards;
+  animation-delay: 5s;
  }
 
 
@@ -129,7 +130,7 @@
   font-size: 12px;
   transform: rotate(90deg) translate3d(50%, 0, 0);
   transform-origin: 100% 50%;
-  animation: textpopupright 3s forwards;
+  animation: textpopupright 10s forwards;
 }
 
 

@@ -19,7 +19,8 @@ set(isMobile)
     <StrictMode>
       {/* 模型加载为异步需要Suspense包裹 */}
       <Suspense fallback={<Loader />}>
-      {isMobile? <div
+      {isMobile?  <div>
+      <div
           style={{
             width: "100vw",
             height: "100vh",
@@ -35,6 +36,7 @@ set(isMobile)
             src="/projectsAssets/boluoyouzi/images/model_bg.png"
           />
 
+        </div>
         <App />
         </div>
       :<PC/>}

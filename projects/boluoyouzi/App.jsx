@@ -26,11 +26,9 @@ const App = () => {
   return (
     <>
    
-      {modelVisible && (
-        <div className={styles.models}>
+        <div style={{opacity:modelVisible?1:0}} className={styles.models}>
           <Pineapples speed={speed} />
         </div>
-      )}
       {/* // 定义渲染场景 */}
       <div className={styles.layout}>
         <div className={styles.topTitle}>

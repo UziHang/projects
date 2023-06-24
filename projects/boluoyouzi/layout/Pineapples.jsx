@@ -70,7 +70,7 @@ function Pineapple({ index, z, speed }) {
   )
 }
 
-export default function Pineapples({speed = 5, count = 70, depth = 80, easing = (x) => Math.sqrt(1 - Math.pow(x - 1, 2)) }) {
+export default function Pineapples({speed = 5, count = 70, depth = 80, easing = (x) => Math.sqrt(1 - Math.pow(x - 1, 2)),modelVisible }) {
   return (
     // 不需要抗锯齿（更快），dpr 将分辨率限制在 1.5（也比全分辨率更快）
     <Canvas style={{width:'100vw',height:'100vh',position:'fixed'}}gl={{ antialias: false }} dpr={[1, 1.5]} camera={{ position: [0, 0, 8], fov: 20, near: 0.01, far: depth + 15 }}>
