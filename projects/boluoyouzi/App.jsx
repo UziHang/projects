@@ -60,15 +60,17 @@ const App = () => {
             step="1"
             onChange={(e) => set(e.target.value)}
           />
-        
         </div>
         <div className={styles.mouse}>
-{ modelVisible&&<Image
+          {modelVisible && (
+            <Image
+              alt='一只耳'
               width={30}
               height={30}
               src="/projectsAssets/boluoyouzi/images/mouse.png"
-            />}
-          </div>
+            />
+          )}
+        </div>
 
         <div className={styles.buttons}>
           <div
@@ -83,15 +85,16 @@ const App = () => {
           >
             <span>查看故事</span>
           </div>
-          <Link href="/boluoyouzi/name-list">
+          <Link href="/boluoyouzi/name-list" passHref>
             <div className={styles.cyberButton}>黑猫战士</div>
           </Link>
+          <Link href="/boluoyouzi/moment" passHref>
           <div
             className={styles.cyberButton}
-            onClick={() => alert("开发中QAQ")}
           >
             菠萝油子
           </div>
+          </Link>
         </div>
 
         <div
@@ -106,6 +109,7 @@ const App = () => {
         {change && (
           <div className={styles.feifei}>
             <Image
+              alt='狒狒'
               width={80}
               height={60}
               src="/projectsAssets/boluoyouzi/images/feifei.jpg"
