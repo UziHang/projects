@@ -6,20 +6,19 @@ import Image from "next/image";
 
 export default function PC() {
   return (
-    
     <div
       style={{
         width: "100vw",
         height: "100vh",
         boxSizing: "border-box",
         margin: 0,
-        padding: '0 10vw',
+        padding: "0 10vw",
         position: "fixed",
         background: "#151520",
         display: "flex",
         justifyContent: "space-evenly",
         alignItems: "center",
-    }}
+      }}
     >
       <div
         style={{
@@ -42,11 +41,15 @@ export default function PC() {
           />
         </Canvas>
       </div>
-      <h1 style={{
-        writingMode: 'vertical-rl',
-        background: 'linear-gradient(135deg, #5c6bc0, #ab47bc)',
-        padding:'  10px 0'
-    }}>没做PC端适配</h1>
+      <h1
+        style={{
+          writingMode: "vertical-rl",
+          background: "linear-gradient(135deg, #5c6bc0, #ab47bc)",
+          padding: "  10px 0",
+        }}
+      >
+        没做PC端适配
+      </h1>
       <div
         style={{
           margin: "0 auto",
@@ -58,11 +61,15 @@ export default function PC() {
           src="/projectsAssets/boluoyouzi/images/QR.png"
         />
       </div>
-    <h1 style={{
-        writingMode: 'vertical-rl',
-        background: 'linear-gradient(135deg, #5c6bc0, #ab47bc)',
-        padding:'  10px 0'
-    }}>手机扫码浏览</h1>
+      <h1
+        style={{
+          writingMode: "vertical-rl",
+          background: "linear-gradient(135deg, #5c6bc0, #ab47bc)",
+          padding: "  10px 0",
+        }}
+      >
+        手机扫码浏览
+      </h1>
     </div>
   );
 }

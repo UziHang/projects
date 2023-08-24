@@ -1,13 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import {
-  PresentationControls,
-  GizmoHelper,
-  GizmoViewport,
-} from "@react-three/drei";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./App.module.css";
-import "./global.module.css";
 import Pineapples from "./layout/Pineapples";
 
 const App = () => {
@@ -73,6 +67,7 @@ const App = () => {
         </div>
 
         <div className={styles.buttons}>
+
           <div
             className={styles.cyberButton}
             onClick={() => alert("开发中QAQ")}
@@ -85,8 +80,13 @@ const App = () => {
           >
             <span>查看故事</span>
           </div>
-          <Link href="/boluoyouzi/name-list" passHref>
-            <div className={styles.cyberButton}>黑猫战士</div>
+          <Link  href="/boluoyouzi/name-list" passHref>
+          <div
+            className={styles.cyberButton}
+          >
+            黑猫战士
+          </div>
+           
           </Link>
           <Link href="/boluoyouzi/moment" passHref>
           <div
